@@ -2,7 +2,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += C++14
+CONFIG += C++14 c++17
 #QMAKE_CXXFLAGS += /std:c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -17,6 +17,7 @@ SOURCES += \
     IRepository/sensorrepositoryfactory.cpp \
     Repository/mesurevaluejsonrepository.cpp \
     Repository/sensorrepositoryfake.cpp \
+    Utility/utility.cpp \
     View/sensorview.cpp \
     ViewModel/sensorviewmodel.cpp \
     main.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     IRepository/sensorrepositoryfactory.h \
     Repository/mesurevaluejsonrepository.h \
     Repository/sensorrepositoryfake.h \
+    Utility/utility.h \
     View/sensorview.h \
     ViewModel/sensorviewmodel.h \
     mainwindow.h

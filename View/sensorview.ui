@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="labelMesureValue">
+  <widget class="QLabel" name="labelTempature">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -31,7 +31,7 @@
     <string>---</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnMesure">
+  <widget class="QPushButton" name="btnStartMesure">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -41,7 +41,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Mesure</string>
+    <string>Start</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnSaveMesureValue">
@@ -68,6 +68,24 @@
    </property>
    <property name="text">
     <string>Stop</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelHumidity">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>140</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>---</string>
    </property>
   </widget>
  </widget>

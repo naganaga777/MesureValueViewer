@@ -11,6 +11,7 @@ public:
     IMesureValueRepository();
 
     virtual std::vector<MesureValue>  GetAllMesureValueList();
+    virtual bool TrySave(MesureValue value) ;
 };
 
 #endif // IMESUREVALUEREPOSITORY_H

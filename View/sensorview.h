@@ -20,6 +20,7 @@ public:
 private:
     void startMonitoringSensor();
     void stopMonitoringSensor();
+    void saveMesureValue();
     void setEvent();
 
 private:

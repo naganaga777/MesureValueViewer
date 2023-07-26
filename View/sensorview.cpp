@@ -8,8 +8,9 @@ SensorView::SensorView(QWidget *parent) :
 {
     ui->setupUi(this);
     m_viewModel = std::make_unique<SensorViewModel>();
-    connect(this->ui->btnMesure, &QPushButton::pressed,this,&SensorView::startMonitoringSensor);
+    connect(this->ui->btnStartMesure, &QPushButton::pressed,this,&SensorView::startMonitoringSensor);
     connect(this->ui->btnStopMesure ,&QPushButton::pressed,this, &SensorView::stopMonitoringSensor);
+    connect(this->ui->btnSaveMesureValue,&QPushButton::pressed,this, &SensorView::saveMesureValue);
     this->setEvent();
 }
 
@@ -27,12 +28,18 @@ void SensorView::stopMonitoringSensor()
 {
     this->m_viewModel.get()->StopMonitoringSensor();
 }
+void SensorView::saveMesureValue()
+{
+    this->m_viewModel.get()->SaveMesureValue();
+}
 
 
 void SensorView::setEvent()
 {
     m_viewModel->SetEvent([&](const MesureValue& value)
     {
-       this->ui->labelMesureValue->setText(value.DisplayValue().c_str());
+       this->ui->labelTempature->setText(value.DisplayTempature().c_str());
+       this->ui->labelHumidity->setText(value.DisplayHumidity().c_str());
+
     });
 }

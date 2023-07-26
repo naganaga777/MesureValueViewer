@@ -27,6 +27,13 @@ void SensorViewModel::StopMonitoringSensor()
     }
 }
 
+void SensorViewModel::SaveMesureValue()
+{
+
+    this->m_mesureValueRepository.get()->TrySave(this->m_currentMesureValue);
+}
+
+
 void SensorViewModel::SetEvent(std::function<void(const MesureValue&)>func)
 {
     this->OnPropertyChanged = func;
@@ -38,10 +45,10 @@ void SensorViewModel::ThreadWork()
     std::chrono::milliseconds interval(1000);
     while(isEnableMonitoring)
     {
-        auto tmp = m_sensorRepositry.get()->GetValue();
+        m_currentMesureValue = m_sensorRepositry.get()->GetValue();
         if(nullptr != this->OnPropertyChanged)
         {
-            this->OnPropertyChanged(tmp);
+            this->OnPropertyChanged(m_currentMesureValue);
         }
         std::this_thread::sleep_for(interval);
     }

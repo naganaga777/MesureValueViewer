@@ -17,6 +17,7 @@ public:
     void StartMonitoringSensor();
     void StopMonitoringSensor();
     void SetEvent(std::function<void(const MesureValue&)> func);
+    void SaveMesureValue();
 
 
 private:
@@ -25,6 +26,7 @@ private:
      std::function<void(const MesureValue&)>  OnPropertyChanged;
      bool isEnableMonitoring =false;
      std::thread m_thread;
+     MesureValue m_currentMesureValue;
 
      void ThreadWork();
 };
